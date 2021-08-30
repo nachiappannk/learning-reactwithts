@@ -1,1 +1,2 @@
 1. In the typescript config, what is this "include": ["**/*.ts"]? (supposed to be all ts files in all folders and sub folders)
+2. What is devDependencies
