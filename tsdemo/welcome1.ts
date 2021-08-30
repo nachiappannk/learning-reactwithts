@@ -1,6 +1,6 @@
 function greet(name = 'nachi'){
-    console.log('Hello ' +  name);
-    console.log(`Hello ${name}`);
+    console.log('Hello this is a great day, ' +  name);
+    console.log(`Hello -- ${name}`);
 }
 
 
