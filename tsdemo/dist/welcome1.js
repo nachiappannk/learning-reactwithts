@@ -4,4 +4,4 @@ function greet(name) {
     console.log("Hello -- " + name);
 }
 greet();
-greet('my name');
+greet('Nachiappan Kumarappan');
