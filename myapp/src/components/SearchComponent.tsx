@@ -9,7 +9,6 @@ const SearchComponent : React.FC = () => {
     ];
 
     const onButtonClick = () =>{
-        console.log("button clicked");
         let user = users.find(x => { return  x.name === searchString});
         if(user != null){
             setFound(true);
