@@ -4,6 +4,7 @@ import './App.css';
 import MainApp from './components/MainApp';
 import GuestList from './components/GuestList'
 import SearchComponent from './components/SearchComponent';
+import UserSearch from './components/UserSearch';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       </header>
       <GuestList></GuestList>
       <SearchComponent></SearchComponent>
+      <UserSearch users={[]}></UserSearch>
     </div>
   );
 }
