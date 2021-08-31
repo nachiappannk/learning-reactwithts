@@ -18,7 +18,8 @@ export default class UserSearch extends React.Component<UserSearchProps> {
         name : '',
         user: undefined,
     }
-    onButtonClick(){
+    onButtonClick = () => {
+        console.log("button clicked");
         const users = [
             {name: "amit", age: 30},
             {name: "shyam", age: 20},
@@ -34,11 +35,7 @@ export default class UserSearch extends React.Component<UserSearchProps> {
         return (
             <div>
                 <input type='text' value={this.state.name} onChange={(e) => {
-                    console.log('on changed input');
-                    
                     this.setState({ name: e.target.value});
-
-
                 }}
                 ></input>
                 <button onClick={this.onButtonClick}>Search</button>
