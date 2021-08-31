@@ -16,10 +16,7 @@ const GuestList : React.FC = () => {
         var newGuests = [...guests, {"name": name, "city": city }];
         setName('');
         setCity('');
-        console.log(name);
         setGuests(newGuests);
-
-        console.log(guests);
     }
 
     return (

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import MainApp from './components/MainApp';
 import GuestList from './components/GuestList'
+import SearchComponent from './components/SearchComponent';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </a>
       </header>
       <GuestList></GuestList>
+      <SearchComponent></SearchComponent>
     </div>
   );
 }
