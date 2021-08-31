@@ -10,9 +10,11 @@ const SearchComponent : React.FC = () => {
 
     const onButtonClick = () =>{
         console.log("button clicked");
-        let isUserFound = users.find(x => { return  x.name === searchString});
-        if(isUserFound != null){
+        let user = users.find(x => { return  x.name === searchString});
+        if(user != null){
             setFound(true);
+            setName(user.name);
+            setAge(user.age.toString());
         }else{
             setFound(false);
         }
@@ -21,11 +23,14 @@ const SearchComponent : React.FC = () => {
 
     const [searchString, setSerachString] = useState("");
     const [found, setFound] = useState(false);
+    const [name, setName] = useState("");
+    const [age, setAge] = useState("");
 
     return (<div>
         <input type='text' value={searchString} onChange={(e) => setSerachString(e.target.value)}></input>
         <button onClick={onButtonClick}>Search</button>
         { found? <div>found</div> : <div>not found</div>}
+        {found? <div>{name}-{age}</div> : null}
     </div>);
 };
 
