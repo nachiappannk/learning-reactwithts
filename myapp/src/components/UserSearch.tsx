@@ -31,6 +31,14 @@ export default class UserSearch extends React.Component<UserSearchProps> {
         this.setState({user : user});
     }
     
+    componentDidMount(){
+        console.log("component did mount")
+    }
+
+    componentDidUpdate(){
+        console.log("component did update")
+    }
+
     render(){
         return (
             <div>

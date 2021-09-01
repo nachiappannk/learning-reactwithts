@@ -5,6 +5,7 @@ import MainApp from './components/MainApp';
 import GuestList from './components/GuestList'
 import SearchComponent from './components/SearchComponent';
 import UserSearch from './components/UserSearch';
+import NoteApp from './components/NoteApp';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <GuestList></GuestList>
       <SearchComponent></SearchComponent>
       <UserSearch users={[]}></UserSearch>
+      <NoteApp></NoteApp>
     </div>
   );
 }
