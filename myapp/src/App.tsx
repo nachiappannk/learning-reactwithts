@@ -6,6 +6,7 @@ import GuestList from './components/GuestList'
 import SearchComponent from './components/SearchComponent';
 import UserSearch from './components/UserSearch';
 import RestApp from './components/RestApp';
+import FormDemo from './components/FormDemo';
 //import NoteApp from './components/NoteApp';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <SearchComponent></SearchComponent>
       <UserSearch users={[]}></UserSearch>
       <RestApp></RestApp>
+      <FormDemo></FormDemo>
     </div>
   );
 }
