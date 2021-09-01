@@ -15,6 +15,15 @@ const RestApp = () => {
 
 
     useEffect(() =>{
+
+        let serializedPost = localStorage.getItem("postdata");
+        if(serializedPost !== null){
+            let post = JSON.parse(serializedPost);
+            setPosts(post);
+            console.log('Skipping call');
+            return;
+        }
+        console.log("making the call");
         axios.get<IPost[]>('https://jsonplaceholder.typicode.com/posts', {
             headers: {
                 "Content-Type" : 'application/json'
@@ -22,6 +31,7 @@ const RestApp = () => {
         })
         .then( (response) => {
             setPosts(response.data);
+            localStorage.setItem('postdata', JSON.stringify(response.data));
             setLoading(false);
         }).catch((ex) =>{
             let error =axios.isCancel(ex)
