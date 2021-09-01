@@ -1,10 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const NoteApp=() =>{
 
     const [notes,setNotes]= useState([])
     const[title,setTitle]=useState('')
     const[body,setBody]=useState('')
+
+    useEffect( () => {
+        console.log("tracking notes - use effect");
+        if(notes.length !== 0){
+            localStorage.setItem("localnotes", JSON.stringify(notes));
+            console.log('setting notes')
+        }
+    }, [notes]);
+
+    useEffect( () => {
+        console.log("tracking nothing - use effect");
+        let localnotes = localStorage.getItem("localnotes");
+        if(localnotes !== null){
+            console.log("reading from local storage");
+            setNotes(JSON.parse(localnotes));
+        }
+    }, []);
+
+
 
 const addNote=(e) =>{
     e.preventDefault()
@@ -27,8 +46,6 @@ const removeNote=(title)=>{
         </div>
     ))
 }
-
-
         <form onSubmit={addNote}>
          <input type='text' className='form-control' placeholder='Enter Notes type' value={title}  onChange={(e)=> setTitle(e.target.value)}/>  
          <input type='text' className='form-control' placeholder='Enter Notes Data' value={body} onChange={(e)=> setBody(e.target.value)}/> 
