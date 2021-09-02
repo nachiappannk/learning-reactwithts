@@ -3,13 +3,7 @@ import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import PageNotFound from "./PageNotFound";
 import Register from "./Register";
-
-const Header = () =>{
-    return (<header>
-        <NavLink to="login">Login</NavLink>
-        <NavLink to="register">Register</NavLink>
-    </header>);
-}
+import Header from "./Header";
  
 const LandingPage=()=>{
     return (
