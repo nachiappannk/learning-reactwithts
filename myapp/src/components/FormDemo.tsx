@@ -3,7 +3,7 @@ import {useForm} from 'react-hook-form';
 
 const FormDemo = () =>{
 
-    const {register, handleSubmit} = useForm<Profile>();
+    const {register, handleSubmit, errors} = useForm<Profile>();
 
 
     const onSubmit=handleSubmit((data) =>{
@@ -24,7 +24,10 @@ const FormDemo = () =>{
         <form onSubmit={onSubmit}>
             <div>
                 <label htmlFor='firstname'>First Name</label>
-                <input ref={register} type ='text' id='firstname' name='firstname'/>
+                <input ref={register({required: true})} type ='text' id='firstname' name='firstname'/>
+                {
+                    errors.firstname && <div className="error">firstname is needed</div>
+                }
             </div>
             <div>
                 <label htmlFor='lasttname'>First Name</label>
