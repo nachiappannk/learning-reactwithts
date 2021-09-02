@@ -7,7 +7,7 @@ const FormDemo = () =>{
 
 
     const onSubmit=handleSubmit((data) =>{
-        alert(data);
+        alert(JSON.stringify(data));
     });
 
     interface Profile {

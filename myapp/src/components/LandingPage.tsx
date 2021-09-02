@@ -5,6 +5,7 @@ import PageNotFound from "./PageNotFound";
 import Register from "./Register";
 import Header from "./Header";
 import UserDetails from "./UserDetails";
+import FormDemo from "./FormDemo";
  
 const LandingPage=()=>{
     return (
@@ -17,6 +18,7 @@ const LandingPage=()=>{
                 <Route path='/register' component={Register}/>
                 <Route path='/' component={Register} exact={true}/>
                 <Route path="/userdetails/:name?/:lastName?" component={UserDetails}/>
+                <Route path="/form" component={FormDemo}/>
                 <Route component={PageNotFound}/>
             </Switch>
         </BrowserRouter>
