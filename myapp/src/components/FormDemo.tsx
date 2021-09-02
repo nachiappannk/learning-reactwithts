@@ -1,18 +1,44 @@
 import React, { useState } from "react";
+import {useForm} from 'react-hook-form';
 
 const FormDemo = () =>{
+
+    const {register, handleSubmit} = useForm<Profile>();
+
+
+    const onSubmit=handleSubmit((data) =>{
+        alert(data);
+    });
+
+    interface Profile {
+        firstname: string
+        lastname: string
+        age: number
+    }
 
     const [name, setName] = useState<string>();
     const [email, setEmail] = useState<string>();
     const [password, setPassword] = useState<string>();
     const [city, setCity] = useState<string>();
-    return (<form>
-        <input type='text' className='form-control' placeholder='Name' value={name}  onChange={(e)=> setName(e.target.value)}/>  
-        <input type='text' className='form-control' placeholder='Email' value={email} onChange={(e)=> setEmail(e.target.value)}/>
-        <input type='password' className='form-control' placeholder='Password' value={password} onChange={(e)=> setPassword(e.target.value)}/>
-        <input type='text' className='form-control' placeholder='City' value={city} onChange={(e)=> setCity(e.target.value)}/> 
-       <button className='btn btn-success'>Submit</button>
-       </form>);
+    return (
+        <form onSubmit={onSubmit}>
+            <div>
+                <label htmlFor='firstname'>First Name</label>
+                <input ref={register} type ='text' id='firstname' name='firstname'/>
+            </div>
+            <div>
+                <label htmlFor='lasttname'>First Name</label>
+                <input  ref={register} type ='text' id='lasttname' name='lasttname'/>
+            </div>
+            <div>
+                <label htmlFor='age'>First Name</label>
+                <input  ref={register} type ='text' id='age' name='age'/>
+            </div>
+            <div>
+                <button type='submit'>Save User</button>
+            </div>
+        </form>
+    );
 }
 
 export default FormDemo;
