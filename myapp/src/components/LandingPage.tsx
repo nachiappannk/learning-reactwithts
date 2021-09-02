@@ -16,7 +16,7 @@ const LandingPage=()=>{
                 <Route path='/login' component={Login}/> 
                 <Route path='/register' component={Register}/>
                 <Route path='/' component={Register} exact={true}/>
-                <Route path="/userdetails/:name?" component={UserDetails}/>
+                <Route path="/userdetails/:name?/:lastName?" component={UserDetails}/>
                 <Route component={PageNotFound}/>
             </Switch>
         </BrowserRouter>
