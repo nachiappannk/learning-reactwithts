@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import PageNotFound from "./PageNotFound";
 import Register from "./Register";
@@ -11,12 +11,12 @@ const LandingPage=()=>{
     <div>
         Dummy testzz
         <BrowserRouter>
-            <div>
+            <Switch>
+                <Route path='/' component={Register}/>
                 <Route path='/login' component={Login}/> 
                 <Route path='/register' component={Register}/>
                 <Route component={PageNotFound}/>
-                
-            </div>
+            </Switch>
         </BrowserRouter>
         </div>
     )
