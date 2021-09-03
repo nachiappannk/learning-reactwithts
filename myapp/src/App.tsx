@@ -8,8 +8,25 @@ import UserSearch from './components/UserSearch';
 import RestApp from './components/RestApp';
 import FormDemo from './components/FormDemo';
 //import NoteApp from './components/NoteApp';
+import { NewNoteInput } from './components/NewNoteInput';
 
 function App() {
+  return (
+    <>
+    <div>
+      <NewNoteInput addNote={alert}/>
+      <hr/>
+      <ul>
+        <li>Some note</li>
+      </ul>
+    </div>
+    </>
+  );
+}
+
+
+
+function App1() {
   return (
     <div className="App">
       <header className="App-header">
