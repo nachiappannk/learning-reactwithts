@@ -9,17 +9,18 @@ import RestApp from './components/RestApp';
 import FormDemo from './components/FormDemo';
 //import NoteApp from './components/NoteApp';
 import { NewNoteInput } from './components/NewNoteInput';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {NotesState} from './notesReducer'
 
 //UI -> Action -> reducer(state.action)
 
 function App() {
   const notes =useSelector<NotesState,NotesState["notes"]>((state) =>state.notes);
+  const dispatch = useDispatch();
   return (
     <>
     <div>
-      <NewNoteInput addNote={alert}/>
+      <NewNoteInput addNote={(note) => dispatch({type : "ADD_NOTE", payload: note})}/>
       <hr/>
       <ul>
       {
