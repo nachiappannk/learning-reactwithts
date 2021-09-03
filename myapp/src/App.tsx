@@ -9,15 +9,24 @@ import RestApp from './components/RestApp';
 import FormDemo from './components/FormDemo';
 //import NoteApp from './components/NoteApp';
 import { NewNoteInput } from './components/NewNoteInput';
+import {useSelector} from 'react-redux'
+import {NotesState} from './notesReducer'
+
+//UI -> Action -> reducer(state.action)
 
 function App() {
+  const notes =useSelector<NotesState,NotesState["notes"]>((state) =>state.notes);
   return (
     <>
     <div>
       <NewNoteInput addNote={alert}/>
       <hr/>
       <ul>
-        <li>Some note</li>
+      {
+    notes.map((note)=>{
+    return <li key={note}>{note}</li>
+    })
+  }
       </ul>
     </div>
     </>
